@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Demo</title>
+</head>
+
+<body>
+    <div>
+        <form action="." method="post">
+            {% csrf_token %}
+            <div>
+                {{ form.as_p }}
+            </div>
+            <input type="submit" value="Add recipe" class="submit" />
+        </form>
+    </div>
+</body>
+</html>
