@@ -1,14 +1,12 @@
 from django.db import models
 from usuarios.models import Usuario
 
-
 class Tipo(models.Model):
     nombre = models.CharField(max_length=25, blank=True)
     descripcion = models.CharField(max_length=25, blank=True)
 
     class Meta:
         db_table = 'tipo'
-
 
 class Producto(models.Model):
     puntuacion = models.IntegerField(blank=True, null=True)
@@ -22,7 +20,6 @@ class Producto(models.Model):
     def __unicode__(self):
         return self.nombre
 
-
 class Compra(models.Model):
     idusuario = models.ForeignKey(Usuario, blank=True, null=True)
     idproducto = models.ForeignKey(Producto, blank=True, null=True)
@@ -30,7 +27,6 @@ class Compra(models.Model):
 
     class Meta:
         db_table = 'compra'
-
 
 class Reserva(models.Model):
     fecha_reserva = models.DateField(blank=True, null=True)
